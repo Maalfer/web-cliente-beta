@@ -1,0 +1,324 @@
+/* Reinicio de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del cuerpo y la galería */
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Estilos generales del header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    
+}
+
+/* Navbar general */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+/* Navbar izquierda y derecha */
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 20px;
+    position: relative; /* Agregado para posicionar el dropdown relativo al li */
+    list-style-type: none; /* Elimina los puntos */
+}
+
+/* Estilo para los enlaces */
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f0db4f; /* Color amarillo en hover */
+}
+
+/* Estilos para el elemento central */
+.navbar-center {
+    background-color: #000;
+    padding: 25px 15px;
+}
+
+.navbar-center a {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 10px 0;
+    list-style: none;
+    top: 100%; /* Mantiene el dropdown justo debajo del enlace */
+    left: 0; /* Alineación a la izquierda del li */
+    width: max-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown li {
+    padding: 10px;
+}
+
+.dropdown li h4 {
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 1.1em; /* Tamaño de fuente para los subtítulos */
+    color: #333; /* Color del texto */
+}
+
+.dropdown li p {
+    margin: 5px 0 10px; /* Espaciado alrededor de los párrafos */
+    font-size: 0.9em; /* Tamaño de fuente para los párrafos */
+    color: #555; /* Color del texto */
+}
+
+
+.dropdown-img {
+    width: 500px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin: 10px auto; /* Centramos la imagen */
+    display: block; /* Aseguramos que la imagen se muestre en una nueva línea */
+}
+
+.dropdown a {
+    color: #000000;
+    padding: 5px 15px;
+    white-space: nowrap;
+    display: block;
+    text-decoration: none;
+}
+
+/* Mostrar el menú desplegable en hover */
+.navbar-left li:hover .dropdown,
+.navbar-right li:hover .dropdown {
+    display: block;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 60px; /* Para que la galería no quede debajo del header */
+}
+
+.gallery-item {
+    position: relative;
+    width: 33.33%;
+    height: 300px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto de zoom en hover */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay para el texto */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    padding: 10px;
+}
+
+.overlay h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.overlay p {
+    font-size: 1em;
+    margin-top: 10px;
+    line-height: 1.4;
+    max-width: 80%;
+    color: #e0e0e0; /* Color más claro para diferenciar del título */
+}
+
+/* Mostrar overlay en hover */
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+/* Estilos para el footer */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.footer-section {
+    margin: 10px;
+    width: 30%;
+}
+
+.footer-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ffffff; /* Color amarillo */
+}
+
+.footer-section p {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Iconos de redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%); /* Hace que los iconos sean blancos */
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+/* Footer inferior */
+.footer-bottom {
+    background-color: #111;
+    padding: 10px;
+    color: #aaa;
+    font-size: 0.8em;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    /* Estilos para dispositivos móviles */
+    
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 80px; /* Asegúrate de que la galería no se superponga al header */
+    }
+
+    /* Otros estilos existentes */
+    header {
+        padding: 10px 5px; /* Reduce el padding en móviles */
+    }
+
+    .navbar {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra los elementos horizontalmente */
+        padding: 10px; /* Reduce el padding */
+        text-align: center; /* Centra el texto dentro del navbar */
+    }
+
+    .navbar-left, .navbar-right {
+        flex-direction: column; /* Cambia la dirección a columna */
+        gap: 10px; /* Reduce el espacio entre los enlaces */
+        width: 100%; /* Asegura que ocupen todo el ancho */
+    }
+
+    .navbar-left a, .navbar-right a {
+        width: 100%; /* Cada enlace ocupa el 100% del ancho disponible */
+        text-align: center; /* Centra el texto de los enlaces */
+    }
+
+    .navbar-center {
+        padding: 15px 10px; /* Reduce el padding */
+        text-align: center; /* Centra el texto */
+    }
+
+    .gallery-item {
+        width: 100%; /* Cada galería ocupa el 100% en móviles */
+        height: auto; /* Altura automática para mantener proporción */
+    }
+
+    .footer-section {
+        width: 100%; /* Hace que las secciones del footer ocupen el 100% */
+        margin-bottom: 20px; /* Añade espacio entre las secciones */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra las secciones */
+    }
+
+    .social-icons {
+        flex-direction: row; /* Alinea iconos en fila */
+        gap: 10px; /* Espacio más pequeño entre iconos */
+    }
+
+    .dropdown-img {
+        width: 100%; /* Ajusta el tamaño de la imagen */
+    }
+
+    .overlay h2 {
+        font-size: 1.2em; /* Tamaño de fuente más pequeño para móviles */
+    }
+
+    .overlay p {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño para móviles */
+    }
+}
